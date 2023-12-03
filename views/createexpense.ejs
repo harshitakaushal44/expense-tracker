@@ -1,0 +1,25 @@
+<%- include("header.ejs")%>
+<link rel="stylesheet" href="stylesheets/page5.css">
+<!--  -->
+<!-- <%- include("nav.ejs")%> -->
+<!--  -->
+<div id="page5">
+    
+    <div id="box">
+        <h1>Add your <span>expenses</span> here!</h1>
+<form action="/createexpense" method="POST">
+    <input type="number" name="amount" placeholder="Enter Amount" />
+    <input type="text" name="remark" placeholder="Remark" />
+    <input type="text" name="category" placeholder="Category" />
+    <select name="paymentmode">
+        <option value="">Payment Mode</option>
+        <option value="cash">Cash</option>
+        <option value="online">Online</option>
+        <option value="cheque">Cheque</option>
+    </select> <br><br><br>
+    <button>Add Expense</button>
+</form>
+</div>
+</div>
+<!--  -->
+<%- include("footer.ejs")%>

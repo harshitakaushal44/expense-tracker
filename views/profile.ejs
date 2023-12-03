@@ -1,0 +1,81 @@
+<%- include('header')%>
+<div id="page4">
+
+    <!-- <%- include("nav.ejs")%> -->
+<!--  -->
+<div id="nav3">
+<div id="toggle"><i class="ri-menu-fill"></i></div>
+<!-- <i class="ri-close-line"></i> -->
+
+<h1>Welcome <%= admin.username %></h1>
+<h1><a href="/signout">Signout</a></h1>
+</div>
+<div class="sidebar">
+    <a href="/profile">home</a><br><br>
+    <a href="">Profile</a><br><br>
+    <a href="">Services</a><br><br>
+    <a href="/reset">reset password</a><br><br>
+    <a href="">contact us</a><br><br>
+    <a href="/aboutus">about us</a>
+
+</div>
+<hr>
+
+ <div class="cntnt"><h3>Save your money with <br>  <span>expense tracker</span></div>
+        
+
+    <div id="center">
+    <div id="createexp">
+    <a href="/createexpense">Add New Expense</a></div><br><br><br>
+
+
+    <div id="filter">
+<div id="fltr1">
+    <form action="/filter">
+    <select name="key" id="">
+        <option value="">Choose one</option>
+        <option value="amount">Amount</option>
+        <option value="remark">Remark</option>
+        <option value="category">Category</option>
+        <option value="paymentmode">Payment Mode</option>
+        <option value="Date">Date</option>
+    </select></div>
+   <div id="fltr2"> <input type="text" name="value" placeholder="Enter Search Item" /></div>
+   <div id="fltr3"> <button>Filter</button></div>
+</form>
+
+</div>
+</div>
+<!-- <h1>Sum: <%= expenses.reduce((ac,cv) => ac+cv.amount, 0)%></h1>
+<%= JSON.stringify(expenses)%> -->
+
+   
+
+<div id="table">
+    <div id="colm">
+        <h2>Amount</h2>
+        <h2>Remark</h2>
+        <h2>Category</h2>
+        <h2>Paymentmode</h2>
+        <h2>Date</h2>
+        <h2>update/delete</h2>
+    </div>
+    <%expenses.forEach((e)=>{%>
+        <div id="bigbox">
+    <div id="data">
+        <div id="box"><%= e.amount%></div>
+        <div id="box"><%= e.remark%></div>
+        <div id="box"><%= e.category%></div>
+        <div id="box"><%= e.paymentmode%></div>
+        <div id="box"><%=e.createdAt%></div>
+        <div id="box"><a href="update">update</a> / <a href="/delete">delete</a></div>
+    </div>
+<%})%>
+</div>
+</div>
+
+</div>
+
+<script src="/javascripts/script.js"></script>
+<%- include('footer')%>
+
